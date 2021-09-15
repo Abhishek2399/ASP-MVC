@@ -12,6 +12,7 @@ namespace MVC_Empty.Controllers
 {
     public class CustomerController : Controller
     {
+        /*
         // Inversion of Control : If one object needs another object then Frist object can get other object from another src/file
         // Dependency Injecton : Injecting objects in some file 
         SqlConnection con;
@@ -19,7 +20,7 @@ namespace MVC_Empty.Controllers
         {
             con = conn; // conn will come from another file 
         }
-
+        */
 
         // To Display some thing on screen we need to return String 
         // Display is the action method 
@@ -61,21 +62,30 @@ namespace MVC_Empty.Controllers
         // can be called with ref in some html file with the controller name and action method name 
         public ActionResult Home() 
         {
-            return Content("Home");
+            // If we ant this as default go to App_start
+            // Route.config
+            // DEfaults : Controller name and action name
+            return View();
         }
 
         public ActionResult Login()
         {
-            return Content("Login");
+            return View();
         }
+
+        public ActionResult Validate(string userName, string userPwd)// parameter names should be same as the name used in the text field of form 
+        {
+            if (userName == "admin@gmail.com")
+                return View();
+            else
+                return RedirectToAction("Login");// redirecting to some other action 
+        }
+
         public ActionResult Register()
         {
-            return Content("Register");
+            return View(); // to create view 
+            // right click on following action method and add view
         }
-
-        
-
-
 
     }
 }
