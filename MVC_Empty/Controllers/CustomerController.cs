@@ -20,7 +20,7 @@ namespace MVC_Empty.Controllers
         }
 
         // Returning int values
-        public int Add()
+        public int GetNum()
         {
             return 100;
         }
@@ -31,6 +31,43 @@ namespace MVC_Empty.Controllers
         {
             return id * id;
         }
+
+        // URL Format : {Domain name}/{Controller class name}/{Action func name}?<Param=val>& . . . 
+
+        // Add two numbers and return value 
+        // Changes in url : https://localhost:44329/Customer/Add?num1=100&num2=100
+        public int Add(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        // Displaying message with HTML File 
+        // ActionResult should be the actual return type of action method 
+        // Mother of all return type is action result 
+        public ActionResult Greet() 
+        {
+            return Content("Welcome to MVC");
+        }
+
+        // Displaying pages 
+        // name of the method and pages should match
+        public ActionResult Home()
+        {
+            return Content("Home");
+        }
+
+        public ActionResult Login()
+        {
+            return Content("Login");
+        }
+        public ActionResult Register()
+        {
+            return Content("Register");
+        }
+
+
+
+
 
     }
 }
