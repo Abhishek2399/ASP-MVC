@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +12,14 @@ namespace MVC_Empty.Controllers
 {
     public class CustomerController : Controller
     {
+        // Inversion of Control : If one object needs another object then Frist object can get other object from another src/file
+        // Dependency Injecton : Injecting objects in some file 
+        SqlConnection con;
+        public CustomerController(SqlConnection conn) // injection of objects is done with the help of constructor  
+        {
+            con = conn; // conn will come from another file 
+        }
+
 
         // To Display some thing on screen we need to return String 
         // Display is the action method 
@@ -49,9 +58,8 @@ namespace MVC_Empty.Controllers
             return Content("Welcome to MVC");
         }
 
-        // Displaying pages 
-        // name of the method and pages should match
-        public ActionResult Home()
+        // can be called with ref in some html file with the controller name and action method name 
+        public ActionResult Home() 
         {
             return Content("Home");
         }
@@ -65,7 +73,7 @@ namespace MVC_Empty.Controllers
             return Content("Register");
         }
 
-
+        
 
 
 
