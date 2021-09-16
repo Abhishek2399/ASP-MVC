@@ -15,12 +15,15 @@
         <h1>Login</h1>
         <form action="/Customer/Validate" method="post"> <!--Posting data in the validate action -->
             <table>
+                <Label Text="Hye this is abhi" bgColor="Red"></Label><asp:Label runat="server" Text="Label"></asp:Label>
                 <tr>
                     <td> User Name </td>
                     <td><input name="userName" id="userName" type="email" /></td>
                     <!--"name" in the input tag should be same as parameter given to the action related to this form -->
                 </tr>
-                <tr>
+                <tr><asp:GridView runat="server">
+                    
+                    </asp:GridView>
                     <td> Password </td>
                     <td><input name="userPwd" id="userPwd" type="password" /></td>
                 </tr>

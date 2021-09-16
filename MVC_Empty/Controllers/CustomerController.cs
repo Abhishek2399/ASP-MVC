@@ -64,7 +64,7 @@ namespace MVC_Empty.Controllers
         {
             // If we ant this as default go to App_start
             // Route.config
-            // DEfaults : Controller name and action name
+            // DEfaults : ConStroller name and action name
             return View();
         }
 
